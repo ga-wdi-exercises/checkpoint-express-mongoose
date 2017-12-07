@@ -1,0 +1,15 @@
+<h1>Welcome to the MessageBoard!</h1>
+<h1>We have {{ messages.length }} messages so far!</h1>
+
+{{#each messages as |message index|}}
+<h2>
+  <a href='/messages/{{message.body}}'></a>
+</h2>
+
+{{/each}}
+<h2>Submit a new message!</h2>
+<form action="/messages" method="post">
+  <input type="text" name="message[author]" placeholder="Author">
+  <input type="text" name="message[body]" placeholder="The Message!">
+    <input type="submit">
+</form>
