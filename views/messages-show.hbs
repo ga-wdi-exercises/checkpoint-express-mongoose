@@ -1,0 +1,8 @@
+<h3>{{ message.body }}</h3>
+<p>By {{ message.date }}</p>
+
+
+{{#each messages as |answer index|}}
+  <h2>{{message.body}}</h2>
+  <p>by {{message.author}}</p>
+{{/each}}
