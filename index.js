@@ -13,9 +13,19 @@ app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
   Message.find({})
-    .then((messages) => {
+    .then(messages => {
       res.render('index', {
         messages: messages
+      })
+    })
+    .catch(err => console.log(err))
+})
+
+app.get('/:id', (req, res) => {
+  Message.findById(req.params.id)
+    .then(message => {
+      res.render('show', {
+        message: message
       })
     })
     .catch(err => console.log(err))
