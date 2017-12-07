@@ -2,17 +2,23 @@ const mongoose = require('./db/connection')
 const Message = mongoose.model('Message')
 const express = require('express')
 const hbs = require('hbs')
-const parser = require('body-parser')
+const bodyParser = require('body-parser')
 
 const app = express()
 
 app.set('view engine', 'hbs')
 
-app.use(parser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
-  res.render('index')
+  Message.find({})
+    .then((messages) => {
+      res.render('index', {
+        messages: messages
+      })
+    })
+    .catch(err => console.log(err))
 })
 
 app.listen(3000, () => {

@@ -1,0 +1,8 @@
+<h1>Messages</h1>
+
+{{#each messages as |message|}}
+  <h3>{{message.body}}</h3>
+  <h5>- {{message.author}}</h5>
+  <a href="/{{message.id}}">See Message</a>
+  <br>
+{{/each}}
