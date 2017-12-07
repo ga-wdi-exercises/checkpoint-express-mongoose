@@ -1,0 +1,8 @@
+{{#if messages}}
+<p><a href="/messages/new">Add a new message</a></p>
+{{#each messages as |message index|}}
+<p><a href="/messages/{{message._id}}">{{message.author}}</a></p>
+{{/each}}
+{{else}}
+<p><a href="/messages/new">No messages yet! Click here to add one</a></p>
+{{/if}}
