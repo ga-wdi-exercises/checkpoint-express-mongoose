@@ -30,7 +30,7 @@ router.get("/:id", (req, res) => {
 		.catch(err => {
 			console.log(err)
 		})
-})
+}) 
 
 router.put("/:id", (req, res) => {
 	Message.findOneAndUpdate({ _id: req.params.id }, req.body.message, {
