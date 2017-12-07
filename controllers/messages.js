@@ -8,10 +8,15 @@ const router = express.Router()
 router.get('/', function(req, res){
   Message.find({}).sort('-date')
   .then(function(messages){
-    res.render('message-index', {
+    res.render('index', {
       messages: messages
     })
   })
+})
+
+router.get('/new', function(req, res) {
+    res.render('messages/new', {
+    })
 })
 
 
@@ -25,7 +30,7 @@ router.post("/", function(req, res){
 router.get("/:id", function(req, res){
   Message.findOne({_id: req.params.id})
     .then((message) => {
-    res.render("message-show", {
+    res.render("messages/show", {
       message: message
     })
   })

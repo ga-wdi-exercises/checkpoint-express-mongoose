@@ -12,7 +12,7 @@ app.engine('hbs', hbs({
     extname:  '.hbs',
     partialsDir: 'views/',
     layoutsDir: 'views/',
-    defaultLayout: 'layout-main'
+    defaultLayout: 'layout'
 }))
 
 app.use('/assets', express.static('public'))
