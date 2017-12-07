@@ -1,0 +1,7 @@
+<a href="/messages/new">Create new message</a>
+
+{{#each messages as |message|}}
+  <h2>{{message.author}} says:</h2>
+  <p>{{message.body}}</p>
+  <a href="/messages/{{message.id}}">view this message</a>
+{{/each}}
