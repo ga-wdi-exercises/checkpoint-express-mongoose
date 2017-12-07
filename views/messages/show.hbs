@@ -1,0 +1,12 @@
+{{#if message}}
+<h2>{{message.author}} for President in {{message.body}}!</h2>
+{{else}}
+<h2>That message couldn't be found!</h2>
+{{/if}}
+
+<h2>Update Messages</h2>
+<form action="/candidates/{{ message.author }}?_method=put" method="post">
+  <input type="text" name="message[author]" value="{{ message.author }}">
+  <input type="text" name="message[body]" value="{{ message.body }}">
+  <input type="submit"  value="Update">
+</form>
