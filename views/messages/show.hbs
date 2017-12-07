@@ -1,0 +1,12 @@
+{{#if message}}
+<h1>{{ message.body }}</h1>
+{{else}}
+<h2>We can't find that message</h2>
+{{/if}}
+<h2>Update the message!</h2>
+<h2>Submit a new message!</h2>
+<form action="/messages/{{message.body}}?_method=put"" method="post">
+  <input type="text" name="message[author]" value="{{message.author}}">
+  <input type="text" name="message[body]" value="{{message.body}}">
+    <input type="submit">
+</form>
