@@ -17,14 +17,13 @@ router.get("/new", (req, res) => {
 
 
 router.post("/", (req, res) => {
-  console.log(req.body.message)
 	Message.create(req.body.message).then(message => {
-		res.redirect(`/messages/${message.body}`)
+		res.redirect(`/messages/${message.id}`)
 	})
 })
 
-router.get("/:body", (req, res) => {
-	Message.findOne({ body: req.params.body })
+router.get("/:id", (req, res) => {
+	Message.findOne({_id: req.params.id })
 		.then(message => {
 			res.render("./messages/show", { message: message })
 		})
@@ -33,12 +32,13 @@ router.get("/:body", (req, res) => {
 		})
 })
 
-router.put("/:body", (req, res) => {
-	Message.findOneAndUpdate({ body: req.params.body }, req.body.message, {
+router.put("/:id", (req, res) => {
+	Message.findOneAndUpdate({ _id: req.params.id }, req.body.message, {
 		new: true
 	})
 		.then(message => {
-			res.redirect(`/messages/${message.body}`)
+      console.log(message)
+			res.redirect(`/messages/${message.id}`)
 		})
 		.catch(err => {
 			console.log(err)

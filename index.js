@@ -19,6 +19,7 @@ app.engine(
 	})
 )
 
+app.use(parser.json())
 app.use(parser.urlencoded({ extended: true }))
 app.use(methodOverride("_method"))
 

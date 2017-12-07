@@ -1,14 +1,13 @@
 {{#if message}}
 <h2>{{message.author}}</h2>
 <p>{{message.body}}</p>
-{{else}}
-<h2>That message couldn't be found!</h2>
-{{/if}}
 <h2>Update message information</h2>
-<form action="/messages/{{message.body}}?_method=put" method="post">
+<form action="/messages/{{message.id}}?_method=put" method="post">
   <input type="text" name="message[author]" value="{{message.author}}">
   <input type="text" name="message[body]" value="{{message.body}}">
   <input type="submit" value="Update">
 </form>
-
+{{else}}
+<h2>That message couldn't be found!</h2>
+{{/if}}
 <a href="/messages">Back to all messages</a>
