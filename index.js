@@ -7,6 +7,8 @@ const app = express()
 
 const messages = require('./controllers/messages')
 
+app.use(parser.json())
+
 app.set('port', process.env.PORT || 3001)
 app.set('view engine', 'hbs')
 
