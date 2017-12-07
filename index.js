@@ -2,10 +2,18 @@ const mongoose = require('./db/connection')
 const Message = mongoose.model('Message')
 const express = require('express')
 const parser = require('body-parser')
+const hbs = require('express-handlebars')
 
 const app = express()
 
 const messages = require('./controllers/messages')
+
+app.engine('.hbs', hbs({
+  extname: '.hbs',
+  partialsDir: 'views/',
+  layoutsDir: 'views/',
+  defaultLayout: 'layout'
+}))
 
 app.use(parser.json())
 
