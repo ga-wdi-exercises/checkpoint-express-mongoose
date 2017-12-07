@@ -1,0 +1,6 @@
+{{#each messages as |message index|}}
+  <h1>{{message.author}}</h1>
+  <p>{{message.body}}</p>
+{{/each}}
+
+<a href="/messages/new">New Message</a>
