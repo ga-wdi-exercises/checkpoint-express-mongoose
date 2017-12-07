@@ -16,6 +16,7 @@ app.engine('hbs', hbs({
 }))
 
 app.use('/assets', express.static('public'))
+app.use(parser.json())
 app.use(parser.urlencoded({extended: true}))
 
 app.get('/', (req,res) => {
