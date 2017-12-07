@@ -1,0 +1,18 @@
+<div class="page-title">
+  <h1>Message</h1>
+</div>
+
+<h3>Add Message</h3>
+<form action="/messages" method="post">
+  <input type="text" name="message[body]" placeholder= "Message"/>
+  <input type="text" name="message[author]" placeholder = "Author"/>
+  <button type="submit">Add Message!</button>
+</form>
+
+<ol>
+  {{#each messages as |message index|}}
+    <li><h3><a href="/messages/{{message.id}}">{{message.body}}</a></h3></li>
+    <h4>{{message.author}}</h4>
+    <small><time>{{message.date}}</time></small>
+  {{/each}}
+</ol>
