@@ -5,3 +5,10 @@
   <h5>- {{message.author}}</h5>
   <br>
 {{/each}}
+
+<h2>Submit New Message</h2>
+  <form action="/" method="post">
+    <input type="text" name="message[author]" placeholder="author"><br>
+    <input type="text" name="message[body]" placeholder="message"><br>
+    <input type="submit">
+  </form>

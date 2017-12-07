@@ -21,6 +21,14 @@ app.get('/', (req, res) => {
     .catch(err => console.log(err))
 })
 
+app.post('/', (req, res) => {
+  Message.create(req.body.message)
+    .then(message => {
+      res.redirect(`/${message.id}`)
+    })
+    .catch(err => console.log(err))
+})
+
 app.get('/:id', (req, res) => {
   Message.findById(req.params.id)
     .then(message => {
