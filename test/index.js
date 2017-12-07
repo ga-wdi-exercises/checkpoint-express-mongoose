@@ -75,7 +75,7 @@ describe("Setup -", () => {
 
   it("should have a messages controller", done => {
     let reqMessagesController = () => require("../controllers/messages.js")
-    
+
     expect(reqMessagesController).to.not.throw()
     expect(reqMessagesController).not.to.be.undefined;
     done();
@@ -93,7 +93,7 @@ describe("Model -", () => {
     app = require("../index.js");
     done()
   })
-  
+
   beforeEach(done => {
     let Message = mongoose.model("Message");
     Message.remove({}).then(() => {
@@ -165,10 +165,10 @@ describe("Routes -", () => {
   before(done => {
     mongoose = require("../db/connection");
     Message = mongoose.model("Message");
-    app = require("../index.js");   
-    done() 
+    app = require("../index.js");
+    done()
   })
- 
+
   beforeEach(done => {
     Message.remove({}).then(() => {
       Message.create({
