@@ -1,6 +1,6 @@
-const Schema = require('./schema')
+const mongoose = require('./connection')
 
-const Message = Schema.Message
+const Message = mongoose.model('Message')
 
 let message1 = new Message({
   author: 'Forrest Gump',
