@@ -5,9 +5,9 @@ const parser = require('body-parser')
 
 const messages = require('./controllers/messages')
 
-const app = express()
-
 const Message = mongoose.model('Message')
+
+const app = express()
 
 app.set('view engine', 'hbs')
 

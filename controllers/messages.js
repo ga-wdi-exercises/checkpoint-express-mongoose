@@ -1,6 +1,6 @@
 const express = require('express')
-
 const mongoose = require('../db/connection')
+
 const Message = mongoose.model('Message')
 
 const router = express.Router()
