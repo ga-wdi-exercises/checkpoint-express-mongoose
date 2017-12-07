@@ -1,0 +1,7 @@
+<a href="/messages">Back</a>
+
+{{#if message}}
+<h2>{{message.author}} : {{message.body}}</h2>
+{{else}}
+<h2>That message couldn't be found!</h2>
+{{/if}}
