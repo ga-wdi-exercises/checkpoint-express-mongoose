@@ -1,0 +1,6 @@
+<h1>All Messages</h1>
+{{#each messages as |message|}}
+<h3><a href="/messages/{{message._id}}">A post by {{message.author}}</a></h3>
+<p>{{message.body}}</p>
+{{/each}}
+<a href="/messages/new">Create a new Post</a>
