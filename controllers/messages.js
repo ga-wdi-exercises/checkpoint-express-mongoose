@@ -22,7 +22,7 @@ router.post("/", (req, res) => {
 	})
 })
 
-outer.put("/:id", (req, res) => {
+router.put("/:id", (req, res) => {
 	Message.findOneAndUpdate({ _id: req.params.id }, req.body.message, {
 		new: true
 	})
