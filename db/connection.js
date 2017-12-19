@@ -1,14 +1,11 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose')
 
 mongoose.connect('mongodb://localhost/messages', {useMongoClient: true})
+
 mongoose.Promise = Promise
 
-const db = mongoose.connection
-
-db.on('error', err => console.log('Did not connect'))
-db.once('open', () => console.log('what is thy bidding?'))
-
-const MessageShema = mongoose.Schema({
+const Schema = mongoose.Schema
+const MessageSchema = new Schema({
   author: String,
   body: String
 })
@@ -16,4 +13,3 @@ const MessageShema = mongoose.Schema({
 const Message = mongoose.model('Message', MessageSchema)
 
 module.exports = mongoose
-module.exports = Message

@@ -1,19 +1,22 @@
 const express = require('express')
 const app = express()
 const hbs = require('hbs')
-const mongoose = require('./db/connection')
-const Message = mongoose.model('Message')
 const handlebars = require('handlebars')
 const bodyParser = require('body-parser')
-const router = express.Router()
-
+const messages = require('./controllers/messages')
+const mongoose = require('./db/connection')
+const Message = mongoose.model('Message')
 
 app.get('/', (req, res) => {
   res.render('index')
 })
 
 
+
+app.set('port', process.env.PORT || 3001)
 app.set("view engine", "hbs")
+
+app.use('/messages', messages)
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))

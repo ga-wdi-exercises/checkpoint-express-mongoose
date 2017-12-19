@@ -1,9 +1,9 @@
-const Message = require('./connection')
-const seedData = require('.seeds.json')
+const Message = require('./schema.js')
+const seedData = require('./seeds.json')
 
 Message.remove({})
   .then(() => {
-    return Messgae.collection.insert(seedData)
+    return Message.collection.insert(seedData)
   })
   .then(() => {
     process.exit()
