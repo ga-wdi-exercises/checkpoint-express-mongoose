@@ -21,3 +21,19 @@ router.post("/", (req, res) => {
 		res.redirect(`/messages/${message.id}`)
 	})
 })
+
+outer.put("/:id", (req, res) => {
+	Message.findOneAndUpdate({ _id: req.params.id }, req.body.message, {
+		new: true
+	})
+		.then(message => {
+      console.log(message)
+			res.redirect(`/messages/${message.id}`)
+		})
+		.catch(err => {
+			console.log(err)
+		})
+})
+
+
+module.exports = router
