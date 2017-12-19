@@ -10,3 +10,14 @@ router.get("/", (req, res) => {
 		})
 	})
 })
+
+router.get("/new", (req, res) => {
+		res.render("./messages/new")
+})
+
+
+router.post("/", (req, res) => {
+	Message.create(req.body.message).then(message => {
+		res.redirect(`/messages/${message.id}`)
+	})
+})
