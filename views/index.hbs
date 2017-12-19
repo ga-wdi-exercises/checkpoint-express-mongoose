@@ -1,0 +1,11 @@
+<h2>{{messages.length}} messages</h2>
+{{#each messages as |message index|}}
+<h3>
+  <p>{{message.author}}</p>
+  <a href="/messages/{{message.id}}">{{message.body}}</a>
+</h3>
+{{/each}}
+
+<h3>
+  <a href="/messages/new">Create new message</a>
+</h3>
