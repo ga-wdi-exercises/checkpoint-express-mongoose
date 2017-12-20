@@ -13,25 +13,25 @@ router.get('/', (req, res) => {
     })
 })
 
-router.get('/messages/:id', (req, res) => {
-  Message.findById(req.params.id)
-    .then((message) => {
-      res.json(message)
-    })
-    .catch((err) => {
-      res.status(200).json(err)
-    })
-})
-
-router.post('/messages', (req, res) => {
-  Message.create(req.body)
-  .then((message) => {
-    res.redirect(`/messages/${req.params.id}`)
-  })
-  .catch((err) => {
-    res.status(200).json(err)
-  })
-})
+// router.get('/messages/:id', (req, res) => {
+//   Message.findById(req.params.id)
+//     .then((message) => {
+//       res.json(message)
+//     })
+//     .catch((err) => {
+//       res.status(200).json(err)
+//     })
+// })
+//
+// router.post('/messages', (req, res) => {
+//   Message.create(req.body)
+//   .then((message) => {
+//     res.redirect(`/messages/${req.params.id}`)
+//   })
+//   .catch((err) => {
+//     res.status(200).json(err)
+//   })
+// })
 
 
 module.exports = router
