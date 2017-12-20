@@ -8,10 +8,14 @@ const mongoose = require('./db/connection')
 const Message = mongoose.model('Message')
 
 app.get('/', (req, res) => {
-  res.render('index')
+  Message.find({})
+    .then((messages) => {
+
+      res.render('index', {
+        messages: messages
+      })
+    })
 })
-
-
 
 app.set('port', process.env.PORT || 3001)
 app.set("view engine", "hbs")
@@ -21,7 +25,7 @@ app.use('/messages', messages)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
-app.listen(3000, () => {
+app.listen(4000, () => {
   console.log('what is thy bidding?')
 })
 

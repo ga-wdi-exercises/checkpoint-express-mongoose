@@ -1,5 +1,9 @@
+<h2>Create a new message</h2>
+<a href="/messages/new">New Mesage</a>
 
-
-<form action="" method="">
-
-</form>
+{{#each messages}}
+  <div class="">
+    <p>{{this.body}}</p>
+    <small>{{this.author}}</small>
+  </div>
+{{/each}}
