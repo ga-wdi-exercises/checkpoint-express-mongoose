@@ -7,6 +7,7 @@ const messages = require('./controllers/messages')
 const mongoose = require('./db/connection')
 const Message = mongoose.model('Message')
 
+
 app.get('/', (req, res) => {
   Message.find({})
     .then((messages) => {
@@ -15,6 +16,26 @@ app.get('/', (req, res) => {
         messages: messages
       })
     })
+})
+
+app.get('/messages/:id', (req, res) => {
+  Message.findById(req.params.id)
+    .then((message) => {
+      res.json(message)
+    })
+    .catch((err) => {
+      res.status(200).json(err)
+    })
+})
+
+app.post('/messages', (req, res) => {
+  Message.create(req.body)
+  .then((message) => {
+    res.redirect(`/messages/${req.params.id}`)
+  })
+  .catch((err) => {
+    res.status(200).json(err)
+  })
 })
 
 app.set('port', process.env.PORT || 3001)

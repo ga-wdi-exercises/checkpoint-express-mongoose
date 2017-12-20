@@ -13,16 +13,25 @@ router.get('/', (req, res) => {
     })
 })
 
-router.post('/messages', (req, res) => {
-  Message.create(req.body.message)
+router.get('/messages/:id', (req, res) => {
+  Message.findById(req.params.id)
     .then((message) => {
-      res.redirect(`/messages/:id`)
+      res.json(message)
     })
     .catch((err) => {
-      console.log(err)
+      res.status(200).json(err)
     })
 })
 
+router.post('/messages', (req, res) => {
+  Message.create(req.body)
+  .then((message) => {
+    res.redirect(`/messages/${req.params.id}`)
+  })
+  .catch((err) => {
+    res.status(200).json(err)
+  })
+})
 
 
 module.exports = router
