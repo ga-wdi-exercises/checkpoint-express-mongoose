@@ -18,6 +18,16 @@ app.get('/', (req, res) => {
     })
 })
 
+app.get('/messages/new', (req, res) => {
+  Message.find({})
+    .then((message) => {
+      res.render('./messages/new')
+    })
+    .catch((err) => {
+      res.status(200).json(err)
+    })
+})
+
 app.get('/messages/:id', (req, res) => {
   Message.findById(req.params.id)
     .then((message) => {
@@ -40,6 +50,7 @@ app.post('/messages', (req, res) => {
 
 app.set('port', process.env.PORT || 3001)
 app.set("view engine", "hbs")
+
 
 app.use('/messages', messages)
 
