@@ -1,0 +1,11 @@
+<h1>Messages </h1>
+
+<div class="links">
+  <ol>
+    {{#each messages}}    
+     <li>
+      <a href="/posts/{{this.title}}">{{this.title}}</a>
+      </li>          
+    {{/each}}
+  </ol>
+</div>

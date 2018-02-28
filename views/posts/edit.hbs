@@ -1,0 +1,12 @@
+<h2>Edit: {{title}}</h2>
+
+<form action="/posts/{{id}}?_method=put" method="post">
+  <p>
+    <label>Title:</label>
+    <input type="text" value="{{title}}" name="[test]"/>
+  </p>
+  <p>
+    <label>Author:</label>
+    <input type="text" value="{{author}}" name="[author]"/>
+  </p>
+</form>
