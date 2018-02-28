@@ -9,4 +9,10 @@ router.get('/', (req, res) => {
         });
 });
 
+router.get('/:id', (req, res) => {
+    Message.findOne({ _id: req.params.id }).then(message => {
+        res.render("messages/show", message);
+    });
+  });
+
 module.exports = router;
