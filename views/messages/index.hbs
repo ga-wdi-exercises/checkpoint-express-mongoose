@@ -1,0 +1,11 @@
+<h1>All Messages</h1>
+
+<a href="/messages/new">Post a new message</a>
+
+<ul>
+    {{#each messages}}
+    <li>
+        {{this.body}}
+    </li>
+    {{/each}}
+</ul>
