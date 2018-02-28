@@ -24,4 +24,11 @@ router.post('/', (req, res) => {
   })
 })
 
+router.get('/:id', (req, res) => {
+  Message.findOne({_id: req.params.id})
+    .then(messages => {
+      res.render('messages/show', {messages})
+    })
+})
+
 module.exports = router
