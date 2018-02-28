@@ -17,6 +17,6 @@ app.get('/', (req, res) => {
 
 app.use('/messages', MessageController);
 
-app.listen(3000, () => console.log("this is working"));
+app.listen(3000, () => console.log("does this work"));
 
 module.exports = app
