@@ -1,0 +1,6 @@
+<a href="/messages/new">New</a>
+{{#each message}}
+        <li>
+            <a href='/messages/{{this.id}}'>{{this.body}}</a>
+        </li>
+{{/each}}
