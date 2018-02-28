@@ -1,0 +1,10 @@
+<h2>{{title}}</h2>
+
+<p>Author: {{Author}}</p>
+ 
+
+<a href="/posts/edit/{{id}}">Edit</a>
+
+<form action="/posts/{{id}}?_method=delete" method="post">
+  <input type="submit" value="Delete" />
+</form>
