@@ -1,0 +1,12 @@
+<h1>Checkpoint...</h1>
+
+<ul>
+    {{#each messages}}
+    <li>
+        <a href="/messages/{{this.id}}">{{this.name}}</a>
+    </li>
+    {{/each}}
+</ul>
+
+
+<a href="messages/new">add new info</a>

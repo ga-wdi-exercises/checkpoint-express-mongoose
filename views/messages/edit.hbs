@@ -1,0 +1,14 @@
+<h1>Edit info page</h1>
+
+<form action="/tests/{{id}}?_method=put" method="POST">
+  <p>
+    <label for="name">Name:</label>
+    <input type="text" value="{{this.name}}" name="name">
+  </p>
+  <p>
+    <label for="beerCapacity">Owner: </label>
+    <input type="text" value="{{this.beerCapacity}}" name="beerCapacity">
+  </p>
+
+  <input type="submit" value="Update">
+</form>
