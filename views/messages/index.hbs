@@ -5,7 +5,7 @@
 <ul>
     {{#each messages}}
     <li>
-        {{this.body}}
+       <a href = '/messages/{{this.id}}'>{{this.body}}</a>
     </li>
     {{/each}}
 </ul>
