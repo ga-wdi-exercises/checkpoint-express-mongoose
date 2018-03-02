@@ -28,6 +28,7 @@ Your application should have the following features:
   * Shows the message body and author
 
 **NOTES:**
+
 * You will need to add `module.exports = app` to the bottom of your `index.js` file for the tests to work (note: add this to the bottom of your `index.js` file, not the `index.js` file in the `tests/` directory).
 * You will need to use `app.use(bodyParser.json())` in addition to the way you use bodyParser to process form submissions
 * If your tests don't exit, try hitting `ctrl-c`.
@@ -38,3 +39,5 @@ Your application should have the following features:
 Fork this repository and clone your fork locally. Commit as you go. When you are finished, push to GitHub.
 
 **Wait until the end of the hour to make your Pull Request**
+
+# TODO

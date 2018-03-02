@@ -1,7 +1,7 @@
 {
   "name": "checkpoint-express-mongoose",
   "version": "1.0.0",
-  "description": "",
+  "description": "You may use outside resources during this checkpoint.",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --exit test/*.js"
@@ -9,11 +9,27 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "hbs": "^4.0.1",
+    "mongoose": "^5.0.7"
+  },
   "devDependencies": {
     "chai": "*",
     "chai-http": "^3.0.0",
     "mocha": "*",
     "mocha-junit-reporter": "*"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grantnathanielbrown/checkpoint-express-mongoose.git"
+  },
+  "bugs": {
+    "url": "https://github.com/grantnathanielbrown/checkpoint-express-mongoose/issues"
+  },
+  "homepage": "https://github.com/grantnathanielbrown/checkpoint-express-mongoose#readme"
 }
