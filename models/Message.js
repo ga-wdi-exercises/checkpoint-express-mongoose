@@ -1,6 +1,6 @@
 const mongoose = require('../db/connection')
 
-const messageSchema = new Mongoose.Schema({
+const messageSchema = new mongoose.Schema({
   Author: String,
   Body: String
 })
