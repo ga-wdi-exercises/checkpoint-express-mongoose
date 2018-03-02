@@ -1,0 +1,13 @@
+<div>
+  <a href="/messages/new">Create a New Message</a>
+</div>
+<section>
+  {{#each message}}
+  <div>
+    <br>
+    <p>Author: {{author}}</p>
+    <p>Message: {{body}}</p>
+    <hr>
+  </div>
+  {{/each}}
+</section>
